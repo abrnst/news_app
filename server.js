@@ -15,6 +15,7 @@ var cheerio = require("cheerio");
 
 
 mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 //Define port
 var port = process.env.PORT || 3000
@@ -41,7 +42,8 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 
-mongoose.connect("mongodb://localhost/newsapp");
+// mongoose.connect("mongodb://localhost/newsapp");
+mongoose.connect("mongodb://localhost/mongoHeadlines");
 
 var db = mongoose.connection;
 
